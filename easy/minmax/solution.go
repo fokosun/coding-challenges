@@ -5,11 +5,13 @@ func GetMin(nums []int) int {
 
 	minimum := values[0]
 
-	for _, value := range values[1:] {
-		if value <= minimum {
-			minimum = value
-		}
-	}
+	// Try to come up with your own solution
+
+	//for _, value := range values[1:] {
+	//	if value <= minimum {
+	//		minimum = value
+	//	}
+	//}
 
 	return minimum
 }
@@ -19,11 +21,13 @@ func GetMax(nums []int) int {
 
 	maximum := values[0]
 
-	for _, value := range values[1:] {
-		if value > maximum {
-			maximum = value
-		}
-	}
+	// Try to come up with your own solution
+
+	//for _, value := range values[1:] {
+	//	if value > maximum {
+	//		maximum = value
+	//	}
+	//}
 
 	return maximum
 }
