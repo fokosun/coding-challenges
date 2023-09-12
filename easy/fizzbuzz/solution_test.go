@@ -33,6 +33,11 @@ func TestFizzBuzzGame(t *testing.T) {
 		actual := FizzBuzz(i + 1)
 		expected := v
 
-		assert.Equal(t, expected, actual, "Actual is not same as Expected")
+		assert.Equal(
+			t,
+			expected,
+			actual,
+			actual+" is not the same as "+expected,
+		)
 	}
 }
