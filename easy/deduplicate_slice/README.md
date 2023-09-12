@@ -9,7 +9,7 @@
 
 ```text
 slice1 ["Jane","John","Rob"]
-slice1 ["Jane","John","Doe"]
+slice2 ["Jane","John","Doe"]
 
 expected ["Jane", "John", "Rob", "Doe"]
 ```
