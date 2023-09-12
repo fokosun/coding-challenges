@@ -3,15 +3,17 @@ package deduplicate_slice
 import "strings"
 
 func UniqueNames(a []string, b []string) []string {
-	combined := map[string]string{}
-	AppendToCombined(a, combined)
-	AppendToCombined(b, combined)
+	// Try to come up with your own solution!
+
+	//combined := map[string]string{}
+	//AppendToCombined(a, combined)
+	//AppendToCombined(b, combined)
 
 	var result []string
 
-	for _, v := range combined {
-		result = append(result, v)
-	}
+	//for _, v := range combined {
+	//	result = append(result, v)
+	//}
 
 	return result
 }
