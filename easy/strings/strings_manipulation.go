@@ -1,5 +1,9 @@
 package string_manipulation
 
+import (
+	"strings"
+)
+
 func ReverseStr(s string) string {
 	strLen := len(s)
 	strBytes := make([]byte, strLen)
@@ -21,4 +25,18 @@ func ReverseSliceOfStrings(s []string) []string {
 	}
 
 	return values
+}
+
+func Palindrome(s string) bool {
+	specialChars := []string{" ", ",", "!", ".", "?", "‘", ":", "-", "’", "“", ";", "”"}
+
+	original := strings.ToLower(s)
+
+	for i := range specialChars {
+		original = strings.ReplaceAll(original, specialChars[i], "")
+	}
+
+	reversed := ReverseStr(original)
+
+	return original == reversed
 }
