@@ -19,9 +19,8 @@ func TestHelloWorld(t *testing.T) {
 }
 
 func TestRomanToNumber(t *testing.T) {
-	//todo
-	actual := "X"
-	expected := "X"
+	actual := RomanToNumber("MCMXCIV")
+	expected := 1994
 
 	assert.Equal(t, expected, actual)
 }
