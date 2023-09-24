@@ -8,3 +8,14 @@ nums := []int{1.34, 2.345}
 
 mean = (1.34 + 2.345) / 2
 ```
+
+3) Write a go function to calculate the factorial of a given number
+```text
+Example
+
+given_num := 5
+
+result = 5 * 4 * 3 * 2 * 1 //120
+```
+
+4)
