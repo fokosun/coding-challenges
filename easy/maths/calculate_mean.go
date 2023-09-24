@@ -6,9 +6,9 @@ func CalculateMean(nums []float64) float64 {
 
 	// Try to come up with your own solution!
 
-	//for i := range nums {
-	//	sum += nums[i]
-	//}
+	for i := range nums {
+		sum += nums[i]
+	}
 
 	return sum / length
 }

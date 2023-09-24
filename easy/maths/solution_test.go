@@ -22,3 +22,21 @@ func TestCalculateMean(t *testing.T) {
 
 	assert.Equal(t, expected, actual)
 }
+
+type FactorialTestDataStruct struct {
+	actual   int
+	expected int
+}
+
+func TestFactorial(t *testing.T) {
+	testCases := []FactorialTestDataStruct{
+		{actual: Factorial(0), expected: 1},
+		{actual: Factorial(1), expected: 1},
+		{actual: Factorial(-175736275), expected: -1},
+		{actual: Factorial(5), expected: 120},
+	}
+
+	for _, d := range testCases {
+		assert.Equal(t, d.actual, d.expected)
+	}
+}
