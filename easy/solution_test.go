@@ -1,7 +1,9 @@
 package main
 
 import (
+	"fmt"
 	"github.com/stretchr/testify/assert"
+	"math"
 	"testing"
 )
 
@@ -51,11 +53,15 @@ func TestPalindromeNumber(t *testing.T) {
 }
 
 func TestRemoveElement(t *testing.T) {
-	//todo
-	actual := "X"
-	expected := "X"
+	actual1 := RemoveElement([]int{3, 2, 2, 3}, 3)
+	expected1 := 2
 
-	assert.Equal(t, expected, actual)
+	assert.Equal(t, actual1, expected1)
+
+	actual2 := RemoveElement([]int{0, 1, 2, 2, 3, 0, 4, 2}, 2)
+	expected2 := 5
+
+	assert.Equal(t, expected2, actual2)
 }
 
 func TestTwoSum(t *testing.T) {
@@ -70,5 +76,58 @@ func TestTwoSum(t *testing.T) {
 
 	for _, d := range testCases {
 		assert.Equal(t, d.actual, d.expected)
+	}
+}
+
+func TestSqrtCasePerfectSquares(t *testing.T) {
+	sqrs := make(map[int]int)
+
+	for i := 1; i <= 100; i++ {
+		sqrs[i*i] = i
+	}
+
+	for sq, sqrt := range sqrs {
+		actual := Sqrt(sq)
+		expected := float64(sqrt)
+
+		assert.Equal(t, expected, actual)
+	}
+}
+
+func TestSqrtCaseZero(t *testing.T) {
+	actual := Sqrt(0)
+	expected := float64(0)
+
+	assert.Equal(t, expected, actual)
+}
+
+func TestSqrtCaseImaginaryNumbers(t *testing.T) {
+	imgnry := make(map[int]int, 100)
+
+	for i := 1; i <= 100; i++ {
+		imgnry[i] = -i
+	}
+
+	fmt.Println(imgnry)
+
+	for _, c := range imgnry {
+		assert.True(t, math.IsNaN(Sqrt(c)))
+	}
+}
+
+func TestSqrtCaseNonPerfectSquares(t *testing.T) {
+	nums := map[int]float64{
+		//2: 1.4142,
+		//3: 1.7221,
+		//5: 2.2361,
+		//7: 2.6458,
+		17: 4.1231,
+	}
+
+	for n, sqrt := range nums {
+		actual := Sqrt(n)
+		expected := sqrt
+
+		assert.Equal(t, expected, actual)
 	}
 }
