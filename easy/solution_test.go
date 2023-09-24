@@ -18,21 +18,40 @@ func TestHelloWorld(t *testing.T) {
 	assert.Equal(t, expected, actual)
 }
 
+func TestNumberToRoman(t *testing.T) {
+	actual := NumberToRoman(1994)
+	expected := "MCMXCIV"
+
+	assert.Equal(t, expected, actual)
+}
+
 func TestRomanToNumber(t *testing.T) {
-	actual := "X"
-	expected := "X"
+	actual := RomanToNumber("MCMXCIV")
+	expected := 1994
 
 	assert.Equal(t, expected, actual)
 }
 
 func TestPalindromeNumber(t *testing.T) {
-	actual := "X"
-	expected := "X"
+	testTrueData := []int{
+		121, 1, 12121,
+	}
 
-	assert.Equal(t, expected, actual)
+	testFalseData := []int{
+		-121, 10, 5001,
+	}
+
+	for _, i := range testTrueData {
+		assert.True(t, PalindromeNumber(i))
+	}
+
+	for _, i := range testFalseData {
+		assert.False(t, PalindromeNumber(i))
+	}
 }
 
 func TestRemoveElement(t *testing.T) {
+	//todo
 	actual := "X"
 	expected := "X"
 
