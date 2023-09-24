@@ -18,6 +18,13 @@ func TestHelloWorld(t *testing.T) {
 	assert.Equal(t, expected, actual)
 }
 
+func TestNumberToRoman(t *testing.T) {
+	actual := NumberToRoman(1994)
+	expected := "MCMXCIV"
+
+	assert.Equal(t, expected, actual)
+}
+
 func TestRomanToNumber(t *testing.T) {
 	actual := RomanToNumber("MCMXCIV")
 	expected := 1994
