@@ -9,7 +9,11 @@ import (
 )
 
 func main() {
-	FinestFoodHighestRating("Austin", 1000)
+	cities := []string{"Denver", "Seattle", "Austin", "Miami", "Houston", "Omaha", "Dallas", "Portland", "Boston", "Chicago"}
+
+	for i := 0; i < len(cities); i++ {
+		FinestFoodHighestRating(cities[i], 500)
+	}
 }
 
 func FinestFoodHighestRating(city string, votes int) {
@@ -62,20 +66,20 @@ func FinestFoodHighestRating(city string, votes int) {
 			}
 
 			for i := range p_.Data {
-				votes_ := p_.Data[i].UserRating.Votes
-				rating_ := p_.Data[i].UserRating.AverageRating
-				name_ := p_.Data[i].Name
+				userVotes := p_.Data[i].UserRating.Votes
+				userRatings := p_.Data[i].UserRating.AverageRating
+				FoodOutletName := p_.Data[i].Name
 
-				if votes_ >= votes {
-					if _, ok := highs[rating_]; ok {
-						fmt.Printf("Highest Rated in %v is: %v, with an average rating of: %v\n", city, highestRated, max_)
+				if userVotes >= votes {
+					if _, ok := highs[userRatings]; ok {
+						fmt.Printf("The highest rated food outlet in %v is: %v, with an average rating of: %v\n", city, highestRated, max_)
 						return
 					}
 
-					if rating_ >= max_ {
-						max_ = rating_
+					if userRatings >= max_ {
+						max_ = userRatings
 						highestRated = p_.Data[i].Name
-						highs[rating_] = name_
+						highs[userRatings] = FoodOutletName
 					}
 				}
 			}
